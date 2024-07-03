@@ -5,7 +5,7 @@ interface Teacher {
   fullTimeEmployee: boolean;
   yearsOfExperience?: number;
   location: string;
-  [propName: string]: any; // This is the index signature
+  [propName: string]: any;
 }
 
 // Create a teacher object based on the Teacher interface
@@ -19,10 +19,15 @@ const teacher3: Teacher = {
 
 console.log(teacher3);
 
-// Expected output:
-// Object
-// contract: false
-// firstName: "John"
-// fullTimeEmployee: false
-// lastName: "Doe"
-// location: "London"
+// Define the interface for the printTeacher function
+interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
+}
+
+// Implement the printTeacher function
+const printTeacher: printTeacherFunction = (firstName, lastName) => {
+  return `${firstName.charAt(0)}. ${lastName}`;
+};
+
+// Example usage
+console.log(printTeacher("John", "Doe")); // Output: J. Doe
