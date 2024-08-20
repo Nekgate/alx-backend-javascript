@@ -9,4 +9,3 @@ function displayMessage(str) {
 
 // Export function to make it available to other modules
 module.exports = displayMessage;
-
